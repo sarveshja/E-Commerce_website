@@ -1,0 +1,44 @@
+
+label{
+    margin-bottom: 10px;
+}
+
+input{
+    border: 2px solid black;
+}
+#addbutton{
+    margin-top: 15px;
+}
+
+#row1{
+    background-color: black;
+    color: white;
+    height: 10vh;
+}
+
+.btn_logout{
+    color: white;
+    background-color: rgb(86, 65, 65);
+    width: 10vw;
+    height: 7vh;
+    margin-top: 1vh;
+}
+
+.btn_logout:hover{
+    color: black;
+    background-color: rgb(215, 184, 184);
+    
+}
+
+#col1{
+    border-left: 2px solid black;
+}
+
+th{
+    font-size: 18px;
+    border: 2px solid black;
+}
+
+td{
+    border: 2px solid black;
+}

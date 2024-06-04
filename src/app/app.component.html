@@ -1,0 +1,69 @@
+
+<div [hidden]="authorization_allowed == true">
+  <div class="row">
+    <div class="col-sm-12" id="login_logo">
+      <!-- <app-loginlogo></app-loginlogo> -->
+      
+      <div id="div">
+        <button (click)="user_type = ''" id="back" [hidden]="user_type == ''"><i class="fa-solid fa-arrow-left" id="back"></i></button>
+        <div class="align">
+          <i class="fa-solid fa-headphones-simple"></i>  
+          <div>GadgetsIndia</div>
+        </div>
+    </div>
+    
+    </div>
+  </div>
+    
+    <div class="row" id="buttons">
+      <div class="col-sm-4" (click)="user_type = 'customer'">
+        <button class="btn">Login as Customer</button>
+      </div>
+      <div class="col-sm-4" (click)="user_type = 'seller'">
+        <button class="btn">Login as Seller</button>
+      </div>
+      <div class="col-sm-4" (click)="user_type = 'register'">
+        <button class="btn">Register</button>
+      </div>
+    </div>
+    <div>
+      
+    </div>
+    <div class="row" id="login_page">
+      <div class="col-sm-12" id="">
+        <div *ngIf="(user_type == '')" id="home">
+          <app-home></app-home>
+        </div>
+        <div *ngIf="(user_type == 'customer')" class="pad">
+          <app-customerlogin (login)="login1($event)" (register)="register1($event)"></app-customerlogin>
+          
+        </div>
+        <div *ngIf="(user_type == 'seller')" class="pad">
+          <app-sellerlogin (login)="login1($event)" (register)="register1($event)"></app-sellerlogin>
+        </div>
+        <div *ngIf="(user_type == 'register')" class="pad">
+          <app-register></app-register>
+        </div>
+        
+      </div>
+    </div>
+  
+</div>
+<div [hidden]="authorization_allowed== false">
+  <div *ngIf="(user_type == 'customer' && authorization_allowed)">
+    <app-customerdashboard></app-customerdashboard>
+  </div>
+  <div *ngIf="(user_type == 'seller' && authorization_allowed)">
+    <app-sellerdashboard></app-sellerdashboard>
+  </div>
+  
+</div>
+<div class="row" id="footer">
+  <div class="col-sm-12">
+    <ul>
+      <li><i class="fa-brands fa-facebook-f fa-2x"></i></li>
+      <li><i class="fa-brands fa-twitter fa-2x"></i></li>
+      <li><i class="fa-brands fa-instagram-square fa-2x"></i></li>
+    </ul>
+  </div>
+</div>

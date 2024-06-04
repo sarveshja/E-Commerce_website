@@ -1,0 +1,83 @@
+<div class="row" id="row1">
+    <div class="col-sm-10">
+        <app-sellerhead></app-sellerhead>
+    </div>
+    <div class="col-sm-2">
+        <button class="btn_logout" (click)="reload()">Logout</button>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-sm-4" id="col1">
+            <div class="card shadow p-3">
+                <div class="form-floating mb-3">
+                    <h5 class="text-centered-warning">Add Product</h5>
+                </div>
+                <div>
+                    <label for="p_model_no">Model Number:</label>
+                    <input type="text" class="form-control" id="p_model_no" name="p_model_no" [(ngModel)]="p_model_no"
+                        placeholder="Enter model number">
+                </div>
+                <div>
+                    <label for="p_name">Product Name:</label>
+                    <input type="text" class="form-control" id="p_name" name="p_name" [(ngModel)]="p_name"
+                        placeholder="Enter product name">
+                </div>
+                <div>
+                    <label for="p_img_path">Product Image path:</label>
+                    <input type="text" class="form-control" id="p_img_path" name="p_img_path" [(ngModel)]="p_img_path"
+                        placeholder="Enter product image path">
+                </div>
+                <div>
+                    <label for="p_price">Price:</label>
+                    <input type="text" class="form-control" id="p_price" name="p_price" [(ngModel)]="p_price"
+                        placeholder="Enter price">
+                </div>
+                <div>
+                    <label for="p_seller_name">Product Seller Name:</label>
+                    <input type="text" class="form-control" id="p_seller_name" name="p_seller_name"
+                        [(ngModel)]="p_seller_name" placeholder="Enter seller name">
+                </div>
+                <div>
+                    <label for="category">Category:</label>
+                    <input type="text" class="form-control" id="category" name="category" [(ngModel)]="category"
+                        placeholder="Enter category">
+                </div>
+                <button id="addbutton" type="button" class="btn btn-outline-success" (click)="addProduct()">Add
+                    Product</button>
+            </div>
+        </div>
+        <div class="col-sm-8 mt-2">
+            <h5 class="text-danger">Product List</h5>
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Model No.</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Image Path</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Seller Name</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-dark" *ngFor="let product of productList">
+                                <td>{{product.p_model_no}}</td>
+                                <td>{{product.p_name}}</td>
+                                <td>{{product.p_img_path}}</td>
+                                <td>{{product.p_price}}</td>
+                                <td>{{product.p_seller_name}}</td>
+                                <td>{{product.category}}</td>
+                                <td>
+
+                                    <button class="btn btn-outline-danger" (click)="deleteProduct(product)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>

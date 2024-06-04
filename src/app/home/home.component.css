@@ -1,0 +1,82 @@
+#slider{ overflow: hidden;}
+#slider figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+#slider figure img {
+    float: left;
+    width: 20%;
+    height: 500px;
+    
+}
+
+#slider figure #invite {
+    width: 20%;
+    
+}
+
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20%{
+        left: 0;
+    }
+    25%{
+        left: -100%;
+    }
+    45%{
+        left: -100%;
+    }
+    50%{
+        left: -200%;
+    }
+    70%{
+        left: -200%;
+    }
+    75%{
+        left: -300%;
+    }
+    95%{
+        left: -300%;
+    }
+    100%{
+        left: -400%;
+    }
+}
+/* .row{
+    margin: 0;
+    padding: 0;
+} */
+
+.margin{
+    margin: 0;
+    padding: 0;
+}
+
+#about{
+    background-color: rgb(156, 156, 230);
+    margin: 0;
+    padding: 15px;
+    height: 100%;
+}
+
+#sub_heading{
+    text-align: center;
+}
+
+#login_info{
+    margin-left: 30px;
+}
+
+
+
+img{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
